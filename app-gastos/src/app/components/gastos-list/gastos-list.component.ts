@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Outcome} from "../../model/Outcome";
 import {GastosServiceService} from "../../service/gastos-service.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gastos-list',
@@ -11,8 +12,7 @@ export class GastosListComponent implements OnInit {
 
   outcomes?:Outcome[];
 
-
-  constructor(private gastosService:GastosServiceService) { }
+  constructor(private gastosService:GastosServiceService, private route:Router) { }
 
   ngOnInit(): void {
 
@@ -25,5 +25,11 @@ export class GastosListComponent implements OnInit {
         });
 
   }
+
+  btnClick(){
+    this.route.navigateByUrl('create');
+  }
+
+
 
 }

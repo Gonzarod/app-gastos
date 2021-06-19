@@ -10,7 +10,12 @@ import { HomeComponent } from './components/home/home.component';
 import { GastosListComponent } from './components/gastos-list/gastos-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
-import { GastoCreateComponent } from './gasto-create/gasto-create.component';
+import {GastoCreateComponent} from "./components/gasto-create/gasto-create.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -22,11 +27,17 @@ import { GastoCreateComponent } from './gasto-create/gasto-create.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

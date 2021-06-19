@@ -15,4 +15,7 @@ export class GastosServiceService {
     return this.http.get<Outcome[]>(this.Url);
   }
 
+  createGasto(newOutcome: { amount: any; detail: any }) {
+    return this.http.post(this.Url,newOutcome);
+  }
 }
