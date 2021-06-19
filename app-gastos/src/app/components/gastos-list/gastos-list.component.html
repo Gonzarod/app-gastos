@@ -1,1 +1,14 @@
-<p>gastos-list works!</p>
+<div class="col-sm-8 vertical-center">
+  <button class="right" mat-raised-button color="primary">Crear Gasto</button>
+
+  <div class="row card-deck">
+    <div class="col-lg-4 col-md-6 mb-4"   *ngFor="let outcome of outcomes" >
+      <div class="card text-center">
+        <div class="card-body">
+          <h1 class="card-title">$ {{outcome.amount}}  </h1>
+          <p>{{outcome.detail}}  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

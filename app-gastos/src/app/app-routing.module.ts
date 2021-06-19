@@ -4,9 +4,10 @@ import {GastosListComponent} from "./components/gastos-list/gastos-list.componen
 import {HomeComponent} from "./components/home/home.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home',pathMatch: 'full'},
-  {path:'home',component:HomeComponent},
-  {path:'gastos-list',component:GastosListComponent}
+  {path:'',redirectTo:'home',pathMatch: 'full'},
+  {path:'gastos',component:GastosListComponent},
+  {path:'home',component:HomeComponent}
+
 ];
 
 @NgModule({

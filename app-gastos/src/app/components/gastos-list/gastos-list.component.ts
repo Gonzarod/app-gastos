@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Outcome} from "../../model/Outcome";
+import {GastosServiceService} from "../../service/gastos-service.service";
 
 @Component({
   selector: 'app-gastos-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GastosListComponent implements OnInit {
 
-  constructor() { }
+  outcomes?:Outcome[];
+
+
+  constructor(private gastosService:GastosServiceService) { }
 
   ngOnInit(): void {
+
+    this.gastosService.getOutcomes()
+      .subscribe( data=>{
+          this.outcomes=data;
+          console.log(data)},
+        error=> {
+          console.log(error);
+        });
+
   }
 
 }
